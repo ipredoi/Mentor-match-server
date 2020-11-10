@@ -45,9 +45,16 @@ async function addToMentorsTable(mentor) {
   return result.rows[0];
 }
 
+async function bootcamperUpdatingMentors(id, array) {
+  const sqlStatement = `UPDATE bootcampers
+    SET mentors_I_like = ${array}
+    WHERE id = ${id}`;
+}
+
 module.exports = {
   readDataFromBootcampersTable,
   readDataFromMentorsTable,
   addToBootcampersTable,
   addToMentorsTable,
+  bootcamperUpdatingMentors,
 };
