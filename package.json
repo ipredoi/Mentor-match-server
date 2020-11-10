@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node -r dotenv/config ./bin/www",
+    "createMentorsTable": "node -r dotenv/config db/scriptsMentors/createTable.js",
+    "dropMentorsTable": "node -r dotenv/config db/scriptsMentors/dropTable.js",
+    "createBootcampersTable":"node -r dotenv/config db/scriptsBootcampers/createTable.js",
+    "dropBootcampersTable": "node -r dotenv/config db/scriptsBootcampers/dropTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
