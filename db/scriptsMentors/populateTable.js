@@ -15,7 +15,7 @@ const mentorsSeedData = [
   },
 ];
 
-async function addTomentorssTable() {
+async function addToMentorssTable() {
   const sqlStatement = ` INSERT INTO mentors (name,bio,coding_languages,speciality_language,industry,current_business,present_role,role_description,interests,previous_bootcamper) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *;`;
 
   const result = await query(sqlStatement, [
@@ -33,4 +33,4 @@ async function addTomentorssTable() {
 
   console.log(result.rows[0]);
 }
-addTomentorssTable();
+addToMentorssTable();
