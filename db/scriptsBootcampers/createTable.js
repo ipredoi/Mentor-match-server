@@ -6,7 +6,9 @@ const sqlStatement = `CREATE TABLE bootcampers(
     bio VARCHAR (500) NOT NULL, 
     interested_industry VARCHAR (100),  
     interests VARCHAR (200),
-    mentors_I_Like TEXT[]
+    mentors_I_Like TEXT[],
+    email TEXT NOT NULL,
+    google_id TEXT NOT NULL
     
 );`;
 

@@ -11,7 +11,9 @@ const sqlStatement = `CREATE TABLE mentors(
     present_role TEXT,
     role_description VARCHAR(300),
     interests VARCHAR(200) NOT NULL, 
-    previous_bootcamper BOOLEAN
+    previous_bootcamper BOOLEAN,
+    email TEXT NOT NULL, 
+    google_id TEXT NOT NULL
     
 );`;
 
