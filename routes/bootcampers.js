@@ -2,7 +2,9 @@ const { query } = require("../db/index");
 
 const {
   readDataFromBootcampersTable,
-  addToBootcampersTable,bootcamperUpdatingMentors} = require("../Models/index");
+  addToBootcampersTable,
+  bootcamperUpdatingMentors,
+} = require("../Models/index");
 
 const express = require("express");
 const router = express.Router();
@@ -20,6 +22,10 @@ router.post("/", async function (req, res) {
 router.patch("/:id", async function (req, res) {
   let result = await bootcamperUpdatingMentors(req.params.id, req.body);
   res.json({ success: true, payload: result });
+});
+
+router.put("/:id", async function (req, res) {
+  console.log("received put");
 });
 
 module.exports = router;
