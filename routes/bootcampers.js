@@ -4,6 +4,7 @@ const {
   readDataFromBootcampersTable,
   addToBootcampersTable,
   bootcamperUpdatingMentors,
+  getBootcamperById,
 } = require("../Models/index");
 
 const express = require("express");
@@ -11,6 +12,11 @@ const router = express.Router();
 
 router.get("/", async function (req, res) {
   let result = await readDataFromBootcampersTable();
+  res.json({ message: "received on the bootcampers", result });
+});
+
+router.get("/:id", async function (req, res) {
+  let result = await getBootcamperById(req.params.id);
   res.json({ message: "received on the bootcampers", result });
 });
 

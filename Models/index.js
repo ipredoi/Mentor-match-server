@@ -50,8 +50,15 @@ async function addToMentorsTable(mentor) {
 async function bootcamperUpdatingMentors(id, array) {
   const sqlStatement = `UPDATE bootcampers
     SET mentors_I_like =$1
-    WHERE id = $2 RETURNING *`;
+    WHERE google_id = $2 RETURNING *`;
   const result = await query(sqlStatement, [array.mentors_i_like, id]);
+  return result.rows[0];
+}
+
+async function getBootcamperById(id) {
+  const sqlStatement = `SELECT * FROM bootcampers WHERE google_id = $1;`;
+
+  const result = await query(sqlStatement, [id]);
   return result.rows[0];
 }
 
@@ -61,4 +68,5 @@ module.exports = {
   addToBootcampersTable,
   addToMentorsTable,
   bootcamperUpdatingMentors,
+  getBootcamperById,
 };
