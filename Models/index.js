@@ -13,7 +13,7 @@ async function readDataFromMentorsTable() {
 }
 
 async function addToBootcampersTable(bootcamper) {
-  const sqlStatement = ` INSERT INTO bootcampers (name,bio,interested_industry,interests,mentors_I_Like) VALUES ($1,$2,$3,$4,$5) RETURNING *;`;
+  const sqlStatement = ` INSERT INTO bootcampers (name,bio,interested_industry,interests,mentors_I_Like,email,google_id ) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *;`;
 
   const result = await query(sqlStatement, [
     bootcamper.name,
@@ -21,6 +21,8 @@ async function addToBootcampersTable(bootcamper) {
     bootcamper.interested_industry,
     bootcamper.interests,
     bootcamper.mentors_I_Like,
+    bootcamper.email,
+    bootcamper.google_id,
   ]);
 
   return result.rows[0];
