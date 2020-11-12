@@ -64,6 +64,13 @@ async function getBootcamperById(id) {
   return result.rows[0];
 }
 
+async function getMentorsById(id) {
+  const sqlStatement = `SELECT * FROM mentors WHERE google_id = $1;`;
+
+  const result = await query(sqlStatement, [id]);
+  return result.rows[0];
+}
+
 module.exports = {
   readDataFromBootcampersTable,
   readDataFromMentorsTable,
@@ -71,4 +78,5 @@ module.exports = {
   addToMentorsTable,
   bootcamperUpdatingMentors,
   getBootcamperById,
+  getMentorsById,
 };
