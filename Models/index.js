@@ -1,7 +1,7 @@
 const { query } = require("../db/index");
 
 async function readDataFromBootcampersTable() {
-  const sqlStatement = `SELECT * FROM bootcampers`;
+  const sqlStatement = `SELECT * FROM bootcampers ORDER BY id`;
   const result = await query(sqlStatement);
   return result.rows;
 }

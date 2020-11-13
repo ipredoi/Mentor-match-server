@@ -4,7 +4,7 @@ const router = express.Router();
 const {
   readDataFromMentorsTable,
   addToMentorsTable,
-  getMentorById,
+  getMentorsById,
 } = require("../Models/index");
 
 router.get("/", async function (req, res) {
@@ -13,7 +13,7 @@ router.get("/", async function (req, res) {
 });
 
 router.get("/:id", async function (req, res) {
-  let result = await getMentorById(req.params.id);
+  let result = await getMentorsById(req.params.id);
   res.json({ message: "received on the mentors", result });
 });
 
