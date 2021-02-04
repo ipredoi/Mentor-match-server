@@ -10,6 +10,7 @@
 
 
 This is a [web platform](https://socmentormatch.netlify.app) that allows:
+
 👉 Mentors to register and submit information about their professional interests, current job, experience etc.;
 
 👉 School of Code bootcampers to find a suitable mentor who work in tech to support them; 
